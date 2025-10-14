@@ -1,0 +1,32 @@
+name: Generate News Index
+
+on:
+  push:
+    paths:
+      - 'content/news/*.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Generate index.json
+        run: |
+          mkdir -p public/news
+          ls content/news/*.md | sed 's|content/news/||' | jq -R -s -c 'split("\n") | map(select(. != ""))' > public/news/index.json
+
+      - name: Commit and push
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add public/news/index.json
+          git commit -m "Update news index"
+          git push
