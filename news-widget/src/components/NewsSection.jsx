@@ -7,11 +7,11 @@ const NewsSection = () => {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const index = await fetch('/content/news/index.json').then(res => res.json());
+      const index = await fetch('/news/index.json').then(res => res.json());
 
       const items = await Promise.all(
         index.map(async (file) => {
-          const raw = await fetch(`/content/news/${file}`).then(res => res.text());
+          const raw = await fetch(`/news/${file}`).then(res => res.text());
           const { data, content } = matter(raw);
           return {
             ...data,

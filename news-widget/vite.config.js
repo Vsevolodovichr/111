@@ -5,7 +5,7 @@ import path from 'path';
 export default defineConfig({
   plugins: [react()],
   build: {
-    outDir: path.resolve(__dirname, '../js'), // ← куди зберігати зібраний JS
+    outDir: path.resolve(__dirname, '../111/js'), // ← куди зберігати зібраний JS
     emptyOutDir: false, // не очищати всю папку /js
     rollupOptions: {
       input: path.resolve(__dirname, 'src/main.jsx'),
