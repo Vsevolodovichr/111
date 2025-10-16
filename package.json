@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "netlify-cms-app": "^2.15.72",
+    "nodemailer": "^7.0.9"
+  }
+}

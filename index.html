@@ -21,6 +21,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Rubik:wght@400;500;700&display=swap"
     rel="stylesheet">
 
+
+ <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
   <!-- 
     - custom css link
   -->
@@ -332,7 +335,10 @@
             блог
           </p>
           <h2 class="section-title headline-md text-center" data-reveal="bottom">Останні Новини</h2>
+          
           <ul class="grid-list">
+             <div id="news-root"></div>
+            <!--
             <li>
               <div class="blog-card has-before has-after" data-reveal="bottom">
                 <div class="meta-wrapper">
@@ -387,7 +393,7 @@
                 <a href="#" class="btn-text title-lg">Читати далі</a>
               </div>
             </li>
-          </ul>
+          </ul>-->
         </div>
       </section>
       
@@ -561,6 +567,11 @@ banner.addEventListener('click', e => e.stopPropagation());
   -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="/js/news.bundle.js"></script>
+  <script type="module" src="/js/vendor.js"></script>
+
+
+
 
 </body>
 
